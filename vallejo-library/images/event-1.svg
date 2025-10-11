@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Event banner: Family Reading Night">
+  <rect width="1200" height="630" fill="#e6f0ff"/>
+  <circle cx="180" cy="200" r="120" fill="#a6c8ff"/>
+  <circle cx="330" cy="220" r="90" fill="#cfe2ff"/>
+  <rect x="540" y="140" width="520" height="350" rx="20" fill="#ffffff" stroke="#a6c8ff" stroke-width="8"/>
+  <text x="800" y="280" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#18324a" font-weight="700">Family Reading Night</text>
+  <text x="800" y="340" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#18324a">Friday 6–8 PM • Children’s Room</text>
+</svg>

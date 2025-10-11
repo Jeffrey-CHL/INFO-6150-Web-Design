@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book • Vallejo Public Library</title>
+  <meta name="description" content="Book detail page for the Vallejo Public Library class project" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Vallejo Public Library home">
+      <span class="brand-mark" aria-hidden="true">📚</span>
+      <span class="brand-text">Vallejo Public Library</span>
+    </a>
+    <nav aria-label="Primary" class="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="site-main container" role="main">
+
+<article class="book card">
+  <div class="book-grid">
+    <img src="images/book-cover.svg" alt="Cover of 'To Kill a Mockingbird' by Harper Lee" class="book-cover"/>
+    <div>
+      <h1 class="book-title">To Kill a Mockingbird</h1>
+      <p class="muted">By Harper Lee • 1960 • Fiction</p>
+      <p>
+        A timeless novel exploring justice and morality through the eyes of Scout Finch in the racially divided American South.
+      </p>
+
+      <section class="availability">
+        <h2 class="h4">Availability</h2>
+        <ul>
+          <li>Total copies: <strong>12</strong></li>
+          <li>Available now: <strong>5</strong></li>
+          <li>Holds: <strong>2</strong></li>
+        </ul>
+        <a href="#" class="btn btn-primary">Reserve Now</a>
+      </section>
+
+      <section class="details">
+        <h2 class="h4">Details</h2>
+        <dl class="dl">
+          <dt>ISBN</dt><dd>978-0-06-112008-4</dd>
+          <dt>Subjects</dt><dd>Classic, Coming‑of‑Age, Social Justice</dd>
+          <dt>Audience</dt><dd>Teens & Adults</dd>
+          <dt>Location</dt><dd>Fiction Aisle, Shelf L‑12</dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+</article>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-grid">
+    <section>
+      <h2 class="h4">Visit Us</h2>
+      <p>505 Santa Clara St, Vallejo, CA 94590<br/>Mon–Thu 10am–8pm • Fri–Sat 10am–6pm • Sun Closed</p>
+    </section>
+    <section>
+      <h2 class="h4">Contact</h2>
+      <p>Email: info@vallejo-library.example<br/>Phone: (707) 555‑0130</p>
+    </section>
+    <section>
+      <h2 class="h4">Credits</h2>
+      <p>Fonts: Google Fonts (Source Sans 3, Merriweather). Images: self‑created SVG placeholders in <code>/images</code>. You have permission to use them.</p>
+    </section>
+  </div>
+  <div class="container copyright">© 2025 Vallejo Public Library (Class Project)</div>
+</footer>
+<script>
+// Simple accessible mobile menu
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.getElementById('menu');
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('open');
+  });
+}
+</script>
+</body>
+</html>

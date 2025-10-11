@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • Vallejo Public Library</title>
+  <meta name="description" content="About the Vallejo Public Library — class project" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Vallejo Public Library home">
+      <span class="brand-mark" aria-hidden="true">📚</span>
+      <span class="brand-text">Vallejo Public Library</span>
+    </a>
+    <nav aria-label="Primary" class="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="site-main container" role="main">
+
+<section class="about card">
+  <h1>About the Library</h1>
+  <p>The Vallejo Public Library serves a diverse community with books, media, study rooms, and free programs for all ages. Our mission is to spark curiosity, support learning, and build community.</p>
+
+  <div class="info-grid">
+    <section>
+      <h2 class="h4">Hours</h2>
+      <ul class="list">
+        <li>Mon–Thu: 10:00 AM – 8:00 PM</li>
+        <li>Fri–Sat: 10:00 AM – 6:00 PM</li>
+        <li>Sun: Closed</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="h4">Services</h2>
+      <ul class="list">
+        <li>Borrow books, audiobooks, and e‑books</li>
+        <li>Public computers &amp; Wi‑Fi</li>
+        <li>Printing &amp; scanning</li>
+        <li>Children &amp; teen events</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="h4">Get a Card</h2>
+      <p>Bring a photo ID and proof of address. Youth under 14 need a parent or guardian.</p>
+    </section>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-grid">
+    <section>
+      <h2 class="h4">Visit Us</h2>
+      <p>505 Santa Clara St, Vallejo, CA 94590<br/>Mon–Thu 10am–8pm • Fri–Sat 10am–6pm • Sun Closed</p>
+    </section>
+    <section>
+      <h2 class="h4">Contact</h2>
+      <p>Email: info@vallejo-library.example<br/>Phone: (707) 555‑0130</p>
+    </section>
+    <section>
+      <h2 class="h4">Credits</h2>
+      <p>Fonts: Google Fonts (Source Sans 3, Merriweather). Images: self‑created SVG placeholders in <code>/images</code>. You have permission to use them.</p>
+    </section>
+  </div>
+  <div class="container copyright">© 2025 Vallejo Public Library (Class Project)</div>
+</footer>
+<script>
+// Simple accessible mobile menu
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.getElementById('menu');
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('open');
+  });
+}
+</script>
+</body>
+</html>

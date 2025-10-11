@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home • Vallejo Public Library</title>
+  <meta name="description" content="Vallejo Public Library responsive site — class project" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Vallejo Public Library home">
+      <span class="brand-mark" aria-hidden="true">📚</span>
+      <span class="brand-text">Vallejo Public Library</span>
+    </a>
+    <nav aria-label="Primary" class="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="site-main container" role="main">
+
+<section class="hero card card-hero">
+  <img src="images/hero.svg" alt="" class="hero-art" />
+  <div class="hero-content">
+    <h1>Read, Learn, Connect.</h1>
+    <p class="lead">Resources for children, teens, and adults — online and on‑site. Explore our catalog, events, and services.</p>
+    <a class="btn btn-primary" href="book.html">Browse a Featured Book</a>
+  </div>
+</section>
+
+<section aria-labelledby="search-heading" class="search card">
+  <h2 id="search-heading">Search the catalog</h2>
+  <form action="#" method="get" class="search-form" onsubmit="return false" aria-describedby="search-help">
+    <label for="q" class="visually-hidden">Search books</label>
+    <input id="q" name="q" type="search" placeholder="Title, author, or topic" required />
+    <button type="submit" class="btn">Search</button>
+  </form>
+  <p id="search-help" class="muted">This is a demo form for class; it does not submit.</p>
+</section>
+
+<section aria-labelledby="news-heading" class="news">
+  <div class="section-head">
+    <h2 id="news-heading">Latest News</h2>
+    <a href="#" class="link">All news</a>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <img src="images/event-1.svg" alt="" />
+      <div class="card-body">
+        <h3 class="h4">Family Reading Night — Fridays</h3>
+        <p>Join us every Friday from 6–8 PM in the Children’s Room for stories, crafts, and snacks.</p>
+        <a href="#" class="btn btn-ghost">Learn more</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <h3 class="h4">Laptop Lending Program</h3>
+        <p>Need a computer? Borrow a Chromebook for up to 2 weeks with your library card.</p>
+        <a href="#" class="btn btn-ghost">Learn more</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <h3 class="h4">Homework Help (Grades 1–8)</h3>
+        <p>Free tutoring on Tuesdays and Thursdays, 4–6 PM. First‑come, first‑served.</p>
+        <a href="#" class="btn btn-ghost">Learn more</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-grid">
+    <section>
+      <h2 class="h4">Visit Us</h2>
+      <p>505 Santa Clara St, Vallejo, CA 94590<br/>Mon–Thu 10am–8pm • Fri–Sat 10am–6pm • Sun Closed</p>
+    </section>
+    <section>
+      <h2 class="h4">Contact</h2>
+      <p>Email: info@vallejo-library.example<br/>Phone: (707) 555‑0130</p>
+    </section>
+    <section>
+      <h2 class="h4">Credits</h2>
+      <p>Fonts: Google Fonts (Source Sans 3, Merriweather). Images: self‑created SVG placeholders in <code>/images</code>. You have permission to use them.</p>
+    </section>
+  </div>
+  <div class="container copyright">© 2025 Vallejo Public Library (Class Project)</div>
+</footer>
+<script>
+// Simple accessible mobile menu
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.getElementById('menu');
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('open');
+  });
+}
+</script>
+</body>
+</html>

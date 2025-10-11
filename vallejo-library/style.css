@@ -1,0 +1,153 @@
+
+/* Vallejo Public Library • Modern Clean theme
+   Fonts: Source Sans 3 (UI/body), Merriweather (headings)
+   Single CSS for all pages • Mobile-first • Breakpoints: 600px, 900px
+   Author: Class Project (You may reuse without attribution)
+*/
+
+:root{
+  --bg: #ffffff;
+  --paper: #f7fbff;
+  --ink: #142033;
+  --muted: #5b6b7c;
+  --brand: #2d6cff;
+  --brand-ink: #0b2a66;
+  --line: #e6eef9;
+  --shadow: rgba(20,32,51,0.07);
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typography */
+h1, h2, h3, .h4{
+  font-family: "Merriweather", Georgia, serif;
+  line-height: 1.25;
+  margin: 0 0 .5rem;
+  color: var(--ink);
+}
+h1{ font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
+h2{ font-size: clamp(1.4rem, 2.6vw, 1.8rem); }
+h3{ font-size: clamp(1.2rem, 2.2vw, 1.4rem); }
+.h4{ font-size: 1.1rem; }
+.lead{ font-size: 1.125rem; }
+.muted{ color: var(--muted); }
+
+/* Links & buttons */
+a{ color: var(--brand); text-decoration: none; }
+a:hover, a:focus{ text-decoration: underline; }
+.btn{
+  display: inline-block; border: 1px solid var(--brand);
+  padding: .6rem 1rem; border-radius: var(--radius);
+  text-decoration: none; font-weight: 600;
+  box-shadow: 0 1px 2px var(--shadow);
+  background: #fff; color: var(--brand-ink);
+}
+.btn:hover{ filter: brightness(0.98); }
+.btn-primary{ background: var(--brand); color: #fff; border-color: var(--brand); }
+.btn-ghost{ background: transparent; border-color: var(--line); }
+
+.link{ font-weight: 600; }
+
+/* Layout helpers */
+.container{ width: min(1100px, 92%); margin-inline: auto; }
+.card{
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem; box-shadow: 0 10px 24px var(--shadow);
+}
+.cards{ display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.cards .card img{ width:100%; height:auto; border-radius: 12px; }
+
+/* Skip link */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  left: 1rem; top: 1rem; width:auto; height:auto; padding:.5rem .75rem; background:#fff;
+  border: 2px solid var(--brand); border-radius: .5rem; z-index: 1000;
+}
+
+/* Header & nav */
+.site-header{
+  position: sticky; top: 0; background: rgba(255,255,255,.9);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10;
+}
+.header-inner{
+  display: flex; align-items: center; justify-content: space-between; padding: .75rem 0;
+}
+.brand{ display:flex; align-items:center; gap:.5rem; font-weight:700; color: var(--ink); }
+.brand-mark{ font-size: 1.4rem; }
+.brand-text{ letter-spacing: .2px; }
+
+.nav-toggle{
+  display: inline-block; border:1px solid var(--line); background:#fff; padding:.5rem .75rem; border-radius:.5rem;
+}
+.menu{ list-style: none; margin: 0; padding: 0; display: none; }
+.menu.open{ display: block; }
+.menu li a{ display:block; padding:.6rem .4rem; border-radius:.4rem; }
+.menu li a:hover{ background: var(--paper); text-decoration: none; }
+
+/* Hero */
+.card-hero{ padding: 0; overflow: hidden; display: grid; }
+.hero-art{ width: 100%; height: auto; }
+.hero-content{ padding: 1rem 1rem 1.25rem; }
+.hero h1{ margin-top: .25rem; }
+
+/* Search section */
+.search-form{ display:flex; gap:.5rem; flex-wrap: wrap; }
+.search input[type="search"]{
+  flex: 1 1 220px; padding:.7rem .8rem; border:1px solid var(--line); border-radius:.6rem; font-size:1rem;
+}
+.search .btn{ padding:.7rem 1rem; }
+
+/* News */
+.section-head{ display:flex; align-items:center; justify-content:space-between; margin:.25rem 0 .5rem; }
+
+/* Book page */
+.book-grid{ display: grid; gap: 1rem; grid-template-columns: 1fr; align-items: start; }
+.book-cover{ width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--paper); }
+.dl{ display: grid; grid-template-columns: 120px 1fr; gap: .35rem .75rem; }
+.dl dt{ color: var(--muted); }
+.availability ul{ margin:0; padding-left: 1.25rem; }
+
+/* About */
+.info-grid{ display:grid; gap:1rem; grid-template-columns: 1fr; }
+.list{ margin:0; padding-left:1.25rem; }
+
+/* Footer */
+.site-footer{ margin-top: 2rem; padding: 1.25rem 0; background: var(--paper); border-top: 1px solid var(--line); }
+.footer-grid{ display:grid; gap:1rem; grid-template-columns: 1fr; }
+.copyright{ padding-top: .5rem; font-size:.9rem; color: var(--muted); }
+
+/* Visibility helpers */
+.visually-hidden{ position:absolute; width:1px; height:1px; margin:-1px; border:0; padding:0; overflow:hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space:nowrap; }
+
+/* --- Breakpoints --- */
+@media (min-width: 600px){
+  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .card-hero{ grid-template-columns: 1.2fr 1fr; align-items: center; }
+  .hero-content{ padding: 1.5rem; }
+  .menu{ display: flex; gap:.5rem; }
+  .nav-toggle{ display: none; }
+  .footer-grid{ grid-template-columns: repeat(3, 1fr); }
+  .info-grid{ grid-template-columns: repeat(3, 1fr); }
+  .book-grid{ grid-template-columns: 320px 1fr; }
+}
+
+@media (min-width: 900px){
+  .cards{ grid-template-columns: repeat(3, 1fr); }
+  .hero-content{ padding: 2rem 2rem 2.25rem; }
+  .hero h1{ font-size: 2.4rem; }
+  .container{ width: min(1100px, 90%); }
+}
