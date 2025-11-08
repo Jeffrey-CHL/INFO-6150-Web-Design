@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZIP Lookup — Zippopotam.us Demo</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <!--
+    INFO 6150 — Assignment 6
+    Author: Hanlin Cheng
+    Notes for oral questions:
+      - We use semantic HTML (header, main, form, section, footer).
+      - We use fetch() to call the REST API and render results dynamically.
+      - We include input validation, loading states, and error states.
+      - The page works by just opening index.html (no build tools, no server needed).
+  -->
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>ZIP Lookup</h1>
+    <p class="subtitle">Search a U.S. ZIP code to see its city, state, and coordinates.</p>
+  </header>
+
+  <main id="main-content">
+    <!-- Accessible search form -->
+    <section aria-labelledby="search-title" class="card">
+      <h2 id="search-title">Find location by ZIP code</h2>
+      <form id="zip-form" novalidate>
+        <!--
+          Accessibility & validation:
+            - The <label> is explicitly associated with the <input> via for/id.
+            - pattern enforces exactly 5 digits; JS re-validates and shows friendly errors.
+        -->
+        <label for="zip-input">U.S. ZIP code (5 digits)</label>
+        <div class="input-row">
+          <input
+            id="zip-input"
+            name="zip"
+            type="text"
+            inputmode="numeric"
+            autocomplete="postal-code"
+            pattern="\d{5}"
+            maxlength="5"
+            placeholder="e.g., 94105"
+            required
+            aria-describedby="zip-help"
+          />
+          <button id="search-btn" type="submit" class="btn">Search</button>
+        </div>
+        <p id="zip-help" class="help-text">Enter exactly five digits. Example: <button type="button" class="chip" data-demo="94105">94105</button>, <button type="button" class="chip" data-demo="10001">10001</button>.</p>
+        <p id="form-error" class="error" role="alert" aria-live="assertive"></p>
+      </form>
+    </section>
+
+    <!-- Results region -->
+    <section aria-labelledby="results-title" class="card">
+      <h2 id="results-title">Results</h2>
+
+      <!--
+        aria-live="polite" lets screen readers announce updates when results arrive.
+        We render:
+          - Loading message while fetching
+          - Error message for 404/Network
+          - Success list of places with city, state, and lat/lng + map link
+      -->
+      <div id="results" aria-live="polite">
+        <p class="muted">Search for a ZIP code to see data from the API.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Data: <a href="https://api.zippopotam.us" target="_blank" rel="noopener">Zippopotam.us</a>
+      • Built for INFO 6150 Assignment 6.
+    </p>
+    <p>
+      <small>No API keys, no credit cards required.</small>
+    </p>
+    <noscript>
+      <p class="error">This page requires JavaScript to fetch and display data.</p>
+    </noscript>
+  </footer>
+</body>
+</html>
