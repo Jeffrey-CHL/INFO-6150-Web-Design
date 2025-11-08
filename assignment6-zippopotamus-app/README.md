@@ -7,7 +7,7 @@ This implementation uses the **Zippopotam.us** API to look up U.S. ZIP codes and
 
 ---
 
-## How to run (TA-friendly)
+## How to run
 
 1. Download the repo and open the folder.
 2. Double-click **`index.html`** to open in your browser.
