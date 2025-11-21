@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EV Charging Stations</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Single shared JS file for all pages -->
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>EV Charging Stations</h1>
+      <!-- Button to go to the page to create a new station -->
+      <a class="btn" href="create.html">+ Create New Station</a>
+    </header>
+
+    <!-- List of stations loaded from the API -->
+    <section aria-label="List of EV charging stations">
+      <ul id="stationsList"></ul>
+    </section>
+  </main>
+</body>
+</html>
